@@ -26,7 +26,7 @@ public class UserController {
 
     private UserRepository userRepository;
 
-    private RabbitTemplate rabbitTemplate;
+   
 
     @ApiOperation(value = "Create User", consumes = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping()
@@ -60,23 +60,8 @@ public class UserController {
 
 
 
-    @ApiOperation(value = "Pay bill with reservation id and check reservation and room done", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-@PostMapping("/pay/bill/{reservationId}")
-    String payBill(@PathVariable Long reservationId){
-        //send reservation id to billing service and reservation to be done and paid
-    rabbitTemplate.convertAndSend(topicExchangeName,
-            "foo.bar.baz", reservationId);
-    rabbitTemplate.convertAndSend(topicExchangeName,
-            "foo.bar.bam", reservationId);
-    return "We have sent a message! :" + reservationId;
-}
 
 
-    @ApiOperation(value = "Get All Guests", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @GetMapping("/guests")
-    List<User> allGuests() {
-        return userService.findAllGuests();
-    }
 
 
 

@@ -66,18 +66,5 @@ public String deleteById(Long id){
 }
 
 
-    public List<User> findAllGuests() {
-        List<UserEntity> korisnici = korisnikRepository.findByRole("USER");
 
-        List<User> responses = new ArrayList<User>();
-        if (korisnici != null) {
-            for (UserEntity userEntity : korisnici) {
-                User user = new User();
-                BeanUtils.copyProperties(userEntity, user);
-                responses.add(user);
-            }
-
-        }
-        return responses;
-    }
 }

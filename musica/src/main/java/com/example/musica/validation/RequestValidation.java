@@ -39,9 +39,5 @@ else
             throw new EntityNotFoundException(User.class, "id", id.toString());
         }
     }
-    public void validateEmployee(Long id){
-        if(!korisnikRepository.findById(id).get().getRole().equals("USER")){
-            throw new BaseException("Unauthorized access", HttpStatus.FORBIDDEN);
-        }
-    }
+
 }

@@ -19,17 +19,16 @@ public class UserEntity {
     private String name;
     @Column
     private String surname;
-
+    @Column
+    private String username;
     @Email
     @Column
     private String email;
 
-    @Column(name="role",length = 10485760)
-    @Size(min = 2, max = 10485760)
-    private String role;
+    @Column
+    private Long type;
 
-    @Column(name="password",length = 10485760)
-    @Size(min = 2, max = 10485760)
+    @Column
     private String password;
 
 
@@ -37,12 +36,17 @@ public class UserEntity {
 
     public String getEmail(){ return email;}
     public void setEmail(String email){ this.email=email;}
-    public String getRole(){ return role;}
-    public void setRole(String role){ this.role=role;}
+    public String getUsername(){ return username;}
+    public void setUsername(String username){ this.username=username;}
     public Long getId() {
         return id;
     }
-
+    public Long getType() {
+        return type;
+    }
+    public void setType(Long type) {
+        this.type=type;
+    }
     public String getName() {
         return name;
     }
