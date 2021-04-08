@@ -1,4 +1,4 @@
-package com.Musica;
+package com.example.musica;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MusicaApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MusicaApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MusicaApplication.class, args);
+    }
 
 }
