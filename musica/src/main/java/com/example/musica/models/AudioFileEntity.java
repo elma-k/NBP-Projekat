@@ -1,14 +1,16 @@
 package com.example.musica.models;
 
 
+import com.sun.mail.iap.*;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
-import java.sql.Clob;
+import java.sql.*;
+import java.time.*;
 
 @Entity
-@Table(name = "genre_entity")
-public class GenreEntity {
+@Table(name = "audio_file_entity")
+public class AudioFileEntity {
 
 
     @javax.persistence.Id
@@ -20,10 +22,10 @@ public class GenreEntity {
 
 
     @Column
-    private String title;
+    private Byte[] file;
 
 
-    public GenreEntity(){}
+    public AudioFileEntity(){}
 
 
 
@@ -35,14 +37,11 @@ public class GenreEntity {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public Byte[] getFile() {
+        return file;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setFile(Byte[] file) {
+        this.file = file;
     }
-
-
-
 }
