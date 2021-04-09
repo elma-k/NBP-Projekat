@@ -1,28 +1,41 @@
 package com.example.musica.models;
-import lombok.*;
+
+
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
+import java.time.*;
 
 @Entity
-@AllArgsConstructor
-@Table(name = "korisnik_tip_entity")
-public class UserTypeEntity {
+@Table(name = "performer_entity")
+public class PerformerEntity {
+
+
     @javax.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
+    @Column(name = "id")
     private Long id;
+
+
     @Column
     private String name;
 
+    @Column
+    private String info;
 
 
+    public PerformerEntity(){}
 
 
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -33,17 +46,11 @@ public class UserTypeEntity {
         this.name = name;
     }
 
-
-
-
-
-
-
-
-
-
-    public UserTypeEntity(){
-
+    public String getInfo() {
+        return info;
     }
 
+    public void setInfo(String info) {
+        this.info = info;
+    }
 }
