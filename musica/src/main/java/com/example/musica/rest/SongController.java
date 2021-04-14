@@ -29,6 +29,24 @@ public class SongController {
     }
 
 
+    @PostMapping()
+    public String create(@RequestBody SongRequest songRequest) {
+        return songService.create(songRequest);
+    }
+    @PutMapping("/{id}")
+    String update(@PathVariable Long id, @RequestBody SongRequest song) {
+        return songService.update(id, song);
+    }
+
+    @DeleteMapping("/{id}")
+    public  String deleteSong(@PathVariable Long id) {
+        return songService.deleteSong(id);
+    }
+
+    @GetMapping("/{id}")
+    Song findSongById(@PathVariable Long id) {
+        return songService.findSongById(id);
+    }
 
 
 
