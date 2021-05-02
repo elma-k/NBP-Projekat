@@ -32,7 +32,17 @@ public class UserEntity {
     private String password;
 
 
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private AuthProvider provider;
 
+    public AuthProvider getProvider() {
+        return provider;
+    }
+
+    public void setProvider(AuthProvider provider) {
+        this.provider = provider;
+    }
 
     public String getEmail(){ return email;}
     public void setEmail(String email){ this.email=email;}
