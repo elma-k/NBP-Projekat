@@ -1,14 +1,18 @@
+.navBar1 {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: fit-content;
+}
+
 .homeButton {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    width: 20vh;
-    border-width: 1vh;
+    width: 25vh;
+    border-width: 0.7vh;
+    border-radius: 2vh;
 }
 .loginbutton {
-    margin: 2vh;
     position: absolute;
     right: 2vw;
-    top: 2vh;
 }
 
 .signUpButton {
@@ -16,9 +20,12 @@
 }
 .text {
     color: #f5ecc7;
-    margin: 2vh;
+    margin: 7vh;
     position: absolute;
-    bottom: 2vh;
+    bottom: 0vh;
+    font-size: 8vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
 }
 .logo {
     max-height: 15vh;
@@ -58,4 +65,3 @@ input {
 #divForm {
     text-align: center;
 }
-
