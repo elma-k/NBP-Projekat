@@ -15,8 +15,12 @@ public class UserRequest implements Serializable {
     private String email;
     @NotBlank(message = "Password is mandatory")
     private String password;
-    @NotBlank(message = "Role is mandatory")
-    private String role;
+    @NotBlank(message = "Name is mandatory")
+    private String name;
+    @NotBlank(message = "Surname is mandatory")
+    private String surname;
+    @NotBlank(message = "Username is mandatory")
+    private String username;
 
 
 

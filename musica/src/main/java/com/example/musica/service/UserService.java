@@ -30,7 +30,7 @@ public class UserService {
         UserEntity userEntity =new UserEntity();
         BeanUtils.copyProperties(userRequest, userEntity);
         userEntity.setPassword(passwordEncoder.encode(userRequest.getPassword()));
-        //userEntity.setProvider(AuthProvider.local);
+        userEntity.setProvider(AuthProvider.local);
         korisnikRepository.save(userEntity);
         return "User successfully created";
     }

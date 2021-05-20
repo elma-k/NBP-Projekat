@@ -107,7 +107,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-resources",
                         "/configuration/security",
                         "/swagger-ui.html",
-                        "/webjars/**", "/api/**", "/song/**","/audiofile/**")
+                        "/webjars/**", "/api/**", "/song/**","/audiofile/**", "/user")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
