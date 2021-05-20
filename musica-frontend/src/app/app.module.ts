@@ -13,27 +13,37 @@ import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 import { MDBSpinningPreloader } from 'ng-uikit-pro-standard';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AppComponent,
     PreviewpageComponent,
     LandingPageComponent,
-    LoginFormModalComponent
+    LoginFormModalComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {path: 'previewpage', component: PreviewpageComponent},
-      {path: 'landing-page', component: LandingPageComponent}
+      {path: 'landing-page', component: LandingPageComponent},
+      {path: 'profile-page', component: ProfilePageComponent}
     ]),
     ModalModule.forRoot(),
     MDBBootstrapModulesPro.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule
   ],
-  entryComponents: [ LoginFormModalComponent ],
+  entryComponents: [ LoginFormModalComponent,
+  ProfilePageComponent ],
   providers: [MDBSpinningPreloader],
   bootstrap: [AppComponent]
 })
