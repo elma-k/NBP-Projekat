@@ -15,7 +15,7 @@ interface Location {
 
 export class ProfilePageComponent implements OnInit {
   selectedValue: string;
-
+email="nesto";
   locations: Location[] = [
     {value: 'ba-0', viewValue: 'Bosnia & Herzegovina'},
     {value: 'cr-1', viewValue: 'Croatia'},

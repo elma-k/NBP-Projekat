@@ -9,7 +9,7 @@
         <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field class="example-full-width">
             <mat-label>Name</mat-label>
-            <input matInput value="Marija">
+            <input matInput [(ngModel)]="email" >
         </mat-form-field></td>
         <td><mat-form-field class="example-full-width">
             <mat-label>Surname</mat-label>
@@ -28,7 +28,7 @@
 
         <td><mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
-                <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                <input type="email"  value="amina@mo.hotmail.com" matInput [formControl]="emailFormControl" placeholder="pat@example.com">
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                 Please enter a valid email address
                 </mat-error>

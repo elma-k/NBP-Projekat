@@ -6,9 +6,11 @@
 </div>
 
    <div class="modal-body mx-3">
+    <form class="loginForm" (ngSubmit)="onSave()">
      <div class="md-form mb-5">
+     
        <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
-       <input type="email" id="defaultForm-email" [formControl]="loginFormModalEmail" class="form-control"
+       <input type="email" id="defaultForm-email" [formControl]="loginFormModalEmail" class="form-control" [(ngModel)]="email" 
               mdbInput mdbValidate>
        <label for="defaultForm-email">Your email</label>
        <mdb-error
@@ -24,7 +26,7 @@
      <div class="md-form mb-4">
        <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
        <input type="password" id="defaultForm-pass" [formControl]="loginFormModalPassword" class="form-control"
-              mdbInput mdbValidate>
+       [(ngModel)]="password" mdbInput mdbValidate>
        <label for="defaultForm-pass">Your password</label>
        <mdb-error
          *ngIf="loginFormModalPassword?.invalid && (loginFormModalPassword?.dirty || loginFormModalPassword?.touched)">
@@ -37,7 +39,10 @@
      </div>
 
 
-  </div>
+
   <div class="modal-footer d-flex justify-content-center">
-    <button mdbBtn color="default" class="waves-light" mdbWavesEffect>Login</button>
+    <button type="submit" mdbBtn color="default" class="waves-light" mdbWavesEffect>Login</button>
   </div>
+  </form>
+</div>
+ 

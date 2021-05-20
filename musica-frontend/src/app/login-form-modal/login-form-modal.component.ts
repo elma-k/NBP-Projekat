@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MDBModalRef } from 'ng-uikit-pro-standard';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-
+import {environment} from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-login-form-modal',
   templateUrl: './login-form-modal.component.html',
@@ -9,8 +10,12 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class LoginFormModalComponent  {
   validatingForm: FormGroup;
+email:string;
+password:string;
+private API_BASE_URL = environment.API_BASE_URL;
 
-  constructor(public modalRef: MDBModalRef) {
+private REST_API_SERVER = this.API_BASE_URL+"/auth/login";
+  constructor(public modalRef: MDBModalRef,private httpClient: HttpClient) {
   }
 
   ngOnInit() {
@@ -27,5 +32,13 @@ export class LoginFormModalComponent  {
     return this.validatingForm.get('loginFormModalPassword');
   }
  
-
-}
+  onSave(){
+    console.log(this.email);
+    console.log(this.password);
+    this.httpClient.post(this.REST_API_SERVER,{email:this.email, password:this.password}
+    ).subscribe((data: any)=>{
+      console.log(data);
+     // this.registerForm.reset();
+      });
+  }
+  }

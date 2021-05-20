@@ -17,7 +17,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
-
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,7 @@ import {MatSelectModule} from '@angular/material/select';
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {path: 'previewpage', component: PreviewpageComponent},
-      {path: 'landing-page', component: LandingPageComponent},
+      {path: '', component: LandingPageComponent},
       {path: 'profile-page', component: ProfilePageComponent}
     ]),
     ModalModule.forRoot(),
@@ -40,7 +40,8 @@ import {MatSelectModule} from '@angular/material/select';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
   ],
   entryComponents: [ LoginFormModalComponent,
   ProfilePageComponent ],
