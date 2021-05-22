@@ -1,0 +1,14 @@
+<mat-form-field appearance="outline" style="padding-top:15px;">
+  <mat-label>Search by...</mat-label>
+  <mat-select [(ngModel)]="selectedValue" name="search">
+    <mat-option *ngFor="let s of search" [value]="s.value">
+      {{s.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="outline" style="padding-top:15px;">
+  <mat-label>Search</mat-label>
+  <input #str matInput placeholder="Search a song" (change)="passQueryString(str.value)">
+  <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>

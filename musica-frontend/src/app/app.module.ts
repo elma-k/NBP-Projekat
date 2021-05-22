@@ -17,14 +17,29 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
+import { CardComponent } from './card/card.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { SecondsToMinutesPipe } from './pipe/seconds-to-minutes';
+
 @NgModule({
   declarations: [
     AppComponent,
     PreviewpageComponent,
     LandingPageComponent,
     LoginFormModalComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    CardComponent,
+    SearchBarComponent,
+    SecondsToMinutesPipe
   ],
   imports: [
     BrowserModule,
@@ -41,7 +56,15 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
+    MatIconModule,
+    MatToolbarModule,
     HttpClientModule,
+    MatSliderModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatExpansionModule
   ],
   entryComponents: [ LoginFormModalComponent,
   ProfilePageComponent ],

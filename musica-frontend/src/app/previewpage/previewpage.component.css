@@ -1,85 +1,17 @@
-.navBar1 {
+.navBar {
     background-color: rgba(0, 0, 0, 0.4);
     height: fit-content;
 }
 
-.homeButton {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    width: 25vh;
-    border-width: 0.7vh;
-    border-radius: 2vh;
+
+.example-spacer {
+  flex: 1 1 auto;
 }
-.loginbutton {
-    position: absolute;
-    right: 2vw;
+.search-container {
+  margin: auto;
+  width: 80%;
 }
-.backg {
-    background-color: #152b2e;
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-  }
-  .has-search .form-control {
-    padding-left: 2.375rem;
+.card-container {
+  margin: auto;
+  width: 80%;
 }
-
-.has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-}
-
-/* Create two equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 50%;
-    padding: 5%;
-  }
-  #artists {
-    display: grid;
-    grid-auto-flow: column;
-    grid-column-gap: 4%;
-  }
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive layout - makes the 2 columns stack on top of each other instead of next to each other */
-  @media screen and (max-width:600px) {
-    .column {
-      width: 100%;
-    }
-  }
-
-  input {
-    width: 50%; 
-    margin-left: auto; 
-    margin-right: auto;
-    margin-bottom: 5%;
-  }
-
-  .imageText {
-      text-align: center;
-      color: #f5ecc7;
-      display: inline-block;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  .text {
-    display: block;
-  }
-
-  .imageText img {
-    border-radius: 50%; 
-    max-width: 85px;
-  }
-

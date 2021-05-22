@@ -1,0 +1,17 @@
+.mat-form-field:first-of-type {
+    width: 48%;
+    float: left;
+}
+.mat-form-field:last-of-type {
+    width: 48%;
+    float: right;
+}
+
+
+::ng-deep.mat-form-field-outline {
+  background-color: white;
+  border-radius: 5px;
+}
+::ng-deep.mat-form-field-infix {
+  margin-top: 5px;
+}
