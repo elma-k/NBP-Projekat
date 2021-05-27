@@ -19,7 +19,7 @@ export class ProfilePageComponent implements OnInit {
   surname="Maric";
   email="marija@etf.unsa.ba";
   username="Marija123";
-  userPhotoSrc="./assets/images/profile.png";
+  userPhotoSrc="./assets/images/profile-medium.png";
 
   locations: Location[] = [
     {value: 'ba-0', viewValue: 'Bosnia & Herzegovina'},
@@ -38,4 +38,6 @@ export class ProfilePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSaveChanges() {}
+  onChangeProfilePhoto() {}
 }

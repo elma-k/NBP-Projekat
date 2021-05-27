@@ -1,12 +1,12 @@
 <mat-toolbar class="navBar navbar-light">
     <a class="navbar-brand" href="#">
-        <img src="./assets/images/logoWhite.png" style="width:65px; padding:5px">
+        <img src="./assets/images/logoWhite.png" style="max-width:70px; padding:5px">
     </a>
     <span class="example-spacer"></span>
   
     <a class="navbar-brand" href="profile-page">
         <label for="name">{{name}}</label>
-        <img [(src)]="userPhotoSrc" style="width:35px;">
+        <img [(src)]="userPhotoSrc" style="width:35px;" >
     </a>
   </mat-toolbar>
 <div id="edit-data-div">
@@ -48,6 +48,14 @@
 
         </mat-form-field></td>
         </tr></table>
-        <button mat-raised-button>Save changes</button>
+        <mat-card class="example-card" >
+            <mat-card-header>
+              <mat-card-subtitle>Profile picture</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [(src)]="userPhotoSrc" alt="Profile photo">   
+            <button mat-raised-button color="is-dark" (click)="onChangeProfilePhoto()" style="border: thin;">Change image</button>
+        </mat-card>
+        <br>
+        <button mat-raised-button (click)="onSaveChanges()">Save changes</button>
     </form>
 </div>

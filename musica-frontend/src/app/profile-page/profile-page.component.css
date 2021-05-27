@@ -25,3 +25,11 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+.example-card {
+  max-width: 200px;
+  text-align: center;
+}
+.example-card img {
+  max-width: 150px;
+  height: auto;
+}
