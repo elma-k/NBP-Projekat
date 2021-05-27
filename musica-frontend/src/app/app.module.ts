@@ -29,6 +29,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { CardComponent } from './card/card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SecondsToMinutesPipe } from './pipe/seconds-to-minutes';
+import { DetailsSongComponent } from './details-song/details-song.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SecondsToMinutesPipe } from './pipe/seconds-to-minutes';
     ProfilePageComponent,
     CardComponent,
     SearchBarComponent,
-    SecondsToMinutesPipe
+    SecondsToMinutesPipe,
+    DetailsSongComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { SecondsToMinutesPipe } from './pipe/seconds-to-minutes';
     RouterModule.forRoot([
       {path: 'previewpage', component: PreviewpageComponent},
       {path: '', component: LandingPageComponent},
-      {path: 'profile-page', component: ProfilePageComponent}
+      {path: 'profile-page', component: ProfilePageComponent},
+      {path: 'song', component: DetailsSongComponent}
     ]),
     ModalModule.forRoot(),
     MDBBootstrapModulesPro.forRoot(),
