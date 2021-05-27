@@ -1,5 +1,14 @@
-
-<div>
+<mat-toolbar class="navBar navbar-light">
+    <a class="navbar-brand" href="#">
+        <img src="./assets/images/logoWhite.png" style="width:65px; padding:5px">
+    </a>
+    <span class="example-spacer"></span>
+  
+    <a class="navbar-brand" href="profile-page">
+        <img src="./assets/images/profile.png" style="width:35px;">
+    </a>
+  </mat-toolbar>
+<div id="edit-data-div">
     <form class="example-form">
         <mat-form-field class="example-full-width">
         <mat-label>Username (disabled)</mat-label>
@@ -9,7 +18,7 @@
         <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field class="example-full-width">
             <mat-label>Name</mat-label>
-            <input matInput [(ngModel)]="email" >
+            <input matInput value="Marija" >
         </mat-form-field></td>
         <td><mat-form-field class="example-full-width">
             <mat-label>Surname</mat-label>
