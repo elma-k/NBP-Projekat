@@ -15,7 +15,12 @@ interface Location {
 
 export class ProfilePageComponent implements OnInit {
   selectedValue: string;
-email="nesto";
+  name="Marija";
+  surname="Maric";
+  email="marija@etf.unsa.ba";
+  username="Marija123";
+  userPhotoSrc="./assets/images/profile.png";
+
   locations: Location[] = [
     {value: 'ba-0', viewValue: 'Bosnia & Herzegovina'},
     {value: 'cr-1', viewValue: 'Croatia'},
@@ -23,10 +28,11 @@ email="nesto";
   ];
   selectedLocation = this.locations[0].value;
 
-  emailFormControl = new FormControl('', [
+  emailFormControl = new FormControl(this.email, [
     Validators.required,
     Validators.email,
   ]);
+
   constructor() { }
 
   ngOnInit(): void {

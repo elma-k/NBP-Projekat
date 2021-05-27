@@ -5,24 +5,25 @@
     <span class="example-spacer"></span>
   
     <a class="navbar-brand" href="profile-page">
-        <img src="./assets/images/profile.png" style="width:35px;">
+        <label for="name">{{name}}</label>
+        <img [(src)]="userPhotoSrc" style="width:35px;">
     </a>
   </mat-toolbar>
 <div id="edit-data-div">
     <form class="example-form">
         <mat-form-field class="example-full-width">
         <mat-label>Username (disabled)</mat-label>
-        <input matInput disabled value="Marija123">
+        <input matInput disabled [(value)]="username">
         </mat-form-field>
     
         <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field class="example-full-width">
             <mat-label>Name</mat-label>
-            <input matInput value="Marija" >
+            <input matInput [(value)]="name">
         </mat-form-field></td>
         <td><mat-form-field class="example-full-width">
             <mat-label>Surname</mat-label>
-            <input matInput value="Maric">
+            <input matInput [(value)]="surname">
         </mat-form-field></td>
         </tr></table>
     
@@ -37,7 +38,7 @@
 
         <td><mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
-                <input type="email"  value="amina@mo.hotmail.com" matInput [formControl]="emailFormControl" placeholder="pat@example.com">
+                <input type="email"  matInput [formControl]="emailFormControl" placeholder="pat@example.com" >
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                 Please enter a valid email address
                 </mat-error>
