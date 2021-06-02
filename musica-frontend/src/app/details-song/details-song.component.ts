@@ -11,7 +11,11 @@ export class DetailsSongComponent implements OnInit {
 
   songTitle = "Prvi maj";
   songPerformer = "Dubioza Kolektiv";
+  performerImg="./assets/images/dubioza-kolektiv.jpg";
+  songDetails = "First edition, 2014, hiphop";
 
+  
+  
   ngOnInit(): void {
   }
 

@@ -30,6 +30,7 @@ import { CardComponent } from './card/card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SecondsToMinutesPipe } from './pipe/seconds-to-minutes';
 import { DetailsSongComponent } from './details-song/details-song.component';
+import { DetailsAlbumComponent } from './details-album/details-album.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { DetailsSongComponent } from './details-song/details-song.component';
     CardComponent,
     SearchBarComponent,
     SecondsToMinutesPipe,
-    DetailsSongComponent
+    DetailsSongComponent,
+    DetailsAlbumComponent
   ],
   imports: [
     BrowserModule,
