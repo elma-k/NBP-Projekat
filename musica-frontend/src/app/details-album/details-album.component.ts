@@ -9,6 +9,12 @@ export class DetailsAlbumComponent implements OnInit {
 
   constructor() { }
 
+  albumPhotoSrc="./assets/images/dubioza-kolektiv.jpg";
+  albumTitle= "Happy Machine";
+  performer= "Dubioza Kolektiv";
+  year = 2016;
+  noSongs =10;
+  fullLength ="35 min, 6 sec";
   ngOnInit(): void {
   }
 

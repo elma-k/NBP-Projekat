@@ -52,7 +52,8 @@ import { DetailsAlbumComponent } from './details-album/details-album.component';
       {path: 'previewpage', component: PreviewpageComponent},
       {path: '', component: LandingPageComponent},
       {path: 'profile-page', component: ProfilePageComponent},
-      {path: 'song', component: DetailsSongComponent}
+      {path: 'song', component: DetailsSongComponent},
+      {path: 'album', component: DetailsAlbumComponent}
     ]),
     ModalModule.forRoot(),
     MDBBootstrapModulesPro.forRoot(),
