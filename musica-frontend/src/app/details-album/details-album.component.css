@@ -18,3 +18,19 @@
 #row1col2 {
     align-items: bottom;
 }
+
+.mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+.mat-column-duration, .mat-column-liked {
+    width: 10%;
+    text-align: right;
+  }
+  
+.mat-column-position {
+    width: 5%;
+}
+
