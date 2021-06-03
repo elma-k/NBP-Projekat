@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 
@@ -33,11 +34,16 @@ export class ProfilePageComponent implements OnInit {
     Validators.email,
   ]);
 
-  constructor() { }
+  fileName = '';
 
+    constructor(private http: HttpClient) {}
+  
+  
   ngOnInit(): void {
   }
 
   onSaveChanges() {}
-  onChangeProfilePhoto() {}
+  
+  onChangeProfilePhoto() {
+  }
 }

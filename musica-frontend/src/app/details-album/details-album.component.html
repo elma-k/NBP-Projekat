@@ -1,18 +1,20 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
 <div class="container">
-    <div class="row" style="max-height: 50vh;  background-color: aquamarine;">
+    <div class="row" style="max-height: 50vh;  background-color:#5a695d;">
         <div class="col-sm-3 text-center" id="row1col1">
             <img [(src)]="albumPhotoSrc"  alt="Album photo" style="max-width: 200px;">
         </div>
         <div class="col-sm-9 d-flex align-items-end" id="row1col2">
             <div >
-                <label>ALBUM</label>
+                <label >ALBUM</label>
                 <h1  for="albumTitle" class="text">{{albumTitle}}</h1> 
-                <label for="performer"> {{performer}} </label> 
-                <label for="year"> {{year}} </label>
-                <label for="noSongs"> {{noSongs}} songs</label>
-                <label for="fullLength"> {{fullLength}} </label>
+                <div id="about">
+                    <label for="performer" id="label-performer"> {{performer}} </label> 
+                    <label for="year"> {{year}} </label> <div class="vl"></div>
+                    <label for="noSongs"> {{noSongs}} songs</label>
+                    <label for="fullLength"> {{fullLength}} </label>
+                </div>
             </div>  
         </div>
     </div>

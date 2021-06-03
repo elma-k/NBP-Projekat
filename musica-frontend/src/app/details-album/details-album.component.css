@@ -1,14 +1,27 @@
 .example-card {
     max-width: 200px;
 }
+.container {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:aliceblue;
+}
 
 .text {
     color:aliceblue;
-    margin: 2vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
 }
+#about {
+    position:relative;
+}
 
+.vl {
+    border-left: 6px solid aliceblue;
+    height: 5px;
+  }
+#label-performer {
+    font-weight: bold;
+}
 
 #row1col1 {
     padding: 1%;
