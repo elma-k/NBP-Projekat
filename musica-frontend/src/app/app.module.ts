@@ -67,6 +67,9 @@ import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { DetailsPerformerComponent } from './details-performer/details-performer.component';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+import { MyplaylistsComponent } from './myplaylists/myplaylists.component';
+import { DialogBox2Component } from './dialog-box2/dialog-box2.component';
+import { PlaylistPreviewComponent } from './playlist-preview/playlist-preview.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +84,10 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
     DetailsSongComponent,
     DetailsAlbumComponent,
     DetailsPerformerComponent,
-    DialogBoxComponent
+    DialogBoxComponent,
+    MyplaylistsComponent,
+    DialogBox2Component,
+    PlaylistPreviewComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +98,9 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
       {path: 'profile-page', component: ProfilePageComponent},
       {path: 'song', component: DetailsSongComponent},
       {path: 'album', component: DetailsAlbumComponent},
-      {path: 'performer', component: DetailsPerformerComponent}
+      {path: 'performer', component: DetailsPerformerComponent},
+      {path: 'myplaylists', component: MyplaylistsComponent},
+      {path: 'playlist/:id', component: PlaylistPreviewComponent}
     ]),
     ModalModule.forRoot(),
     MDBBootstrapModulesPro.forRoot(),

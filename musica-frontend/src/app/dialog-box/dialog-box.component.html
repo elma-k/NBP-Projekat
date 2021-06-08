@@ -1,7 +1,8 @@
 <!-- dialog-box.component.html -->
-<h1 mat-dialog-title><strong>Add to a playlist</strong></h1>
+<h1 mat-dialog-title *ngIf="action == 'Delete'"><strong>Remove from playlist</strong></h1>
+<h1 mat-dialog-title *ngIf="action != 'Delete'"><strong>Add to a playlist</strong></h1>
 <div mat-dialog-content>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" *ngIf="action != 'Delete'; else elseTemplate">
     <mat-label>Choose playlist</mat-label>
     <mat-select [(ngModel)]="selectedValue" name="playlist">
       <mat-option *ngFor="let p of playlist" [value]="p.value">

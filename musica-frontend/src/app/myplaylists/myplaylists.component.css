@@ -12,12 +12,5 @@
 
 .example-spacer {
   flex: 1 1 auto;
-}
-.search-container {
-  margin: auto;
-  width: 80%;
-}
-.card-container {
-  margin: auto;
-  width: 80%;
+  
 }

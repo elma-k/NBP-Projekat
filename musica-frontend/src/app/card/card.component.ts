@@ -8,6 +8,7 @@ import { AudioPlayerService } from '../service/audio-player-service/audio-player
 import { Subject } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -19,7 +20,7 @@ export class CardComponent implements OnInit, OnChanges{
 
     audioPlayerService: AudioPlayerService;
     repeat: string = 'all';
-    constructor(elem: ElementRef, public dialog: MatDialog) {
+    constructor(elem: ElementRef, public dialog: MatDialog, private router: Router, private route: ActivatedRoute) {
         if (elem.nativeElement.tagName.toLowerCase() === 'mat-advanced-audio-player') {
             console.warn(`'mat-advanced-audio-player' selector is deprecated; use 'ngx-audio-player' instead.`);
         }
@@ -36,11 +37,19 @@ export class CardComponent implements OnInit, OnChanges{
       if(result.event == 'Add'){
         this.addToPlaylist(result.data,result.selected);
       }
+      else if (result.event == 'Delete'){
+        this.remove(result.data);
+      }
     });
   }
   addToPlaylist(row_obj:any,selected:any){
     // poziv metode za dodavanje u postojecu playlistu, prosljedjuje se id pjesme i id playliste
     console.log(row_obj.id, selected);
+  }
+  remove(row_obj:any){
+  // poziv metode za brisanje iz postojece playliste, prosljedjuje se id pjesme i id playliste
+  
+   this.route.params.subscribe( params => console.log("Brisanje", row_obj.id,params.id));
 }
 
     @Input()
@@ -72,6 +81,7 @@ export class CardComponent implements OnInit, OnChanges{
     @Input() disablePositionSlider = false;
     @Input() displayArtist = false;
     @Input() displayDuration = false;
+    @Input() displayDelete = false;
 
     // Support for internationalization
     @Input() tableHeader = 'Playlist';

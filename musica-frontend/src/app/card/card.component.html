@@ -251,7 +251,9 @@
             <ng-container matColumnDef="action">
                 <th *matHeaderCellDef mat-header-cell>{{actionHeader}}</th>
                 <td (click)="selectTrack(element.index)" *matCellDef="let element" mat-cell class="action-link">
-                    <a (click)="openDialog('Add',element)">Add to a playlist</a>
+                    <a *ngIf="displayDelete==false"(click)="openDialog('Add',element)"></a>
+                    <a *ngIf="displayDelete==true"(click)="openDialog('Delete',element)">Remove</a>
+
                 </td>
             </ng-container>
 

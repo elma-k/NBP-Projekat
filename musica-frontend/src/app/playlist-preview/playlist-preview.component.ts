@@ -1,22 +1,22 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { PreviewpageService } from './previewpage.service';
+import { PlaylistPreviewService } from './playlist-preview.service';
 import { Track } from '../model/track.model';
 import { CardComponent } from '../card/card.component';
 import { SecondsToMinutesPipe } from '../pipe/seconds-to-minutes';
 @Component({
-  selector: 'app-previewpage',
-  templateUrl: './previewpage.component.html',
-  styleUrls: ['./previewpage.component.css']
+  selector: 'app-playlist-preview',
+  templateUrl: './playlist-preview.component.html',
+  styleUrls: ['./playlist-preview.component.css']
 })
-export class PreviewpageComponent implements OnInit {
+export class PlaylistPreviewComponent implements OnInit {
   music:any;
 
-  constructor(private previewpageService: PreviewpageService) { }
+  constructor(private playlistPreviewService: PlaylistPreviewService) { }
 
   ngOnInit(): void {
   }
   searchSong(value:string) {
-   // this.previewpageService.getMusicList(value).subscribe(music => {
+   // this.playlistPreviewService.getMusicList(value).subscribe(music => {
    //   this.music = music;
    // });
   }
@@ -68,9 +68,9 @@ export class PreviewpageComponent implements OnInit {
   msaapDisplayVolumeControls = true;
   msaapDisplayRepeatControls = true;
   msaapDisplayArtist = true;
+  msaapDisplayDelete = true;
   msaapDisplayDuration = true;
   msaapDisablePositionSlider = false;
-  msaapDisplayDelete = false;
 
   msaapTableHeader = 'Songs';
   msaapTitleHeader = 'Title';
