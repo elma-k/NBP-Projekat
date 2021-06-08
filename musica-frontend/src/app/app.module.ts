@@ -97,8 +97,8 @@ import { PlaylistPreviewComponent } from './playlist-preview/playlist-preview.co
       {path: '', component: LandingPageComponent},
       {path: 'profile-page', component: ProfilePageComponent},
       {path: 'song', component: DetailsSongComponent},
-      {path: 'album', component: DetailsAlbumComponent},
-      {path: 'performer', component: DetailsPerformerComponent},
+      {path: 'album/:id', component: DetailsAlbumComponent},
+      {path: 'artist/:id', component: DetailsPerformerComponent},
       {path: 'myplaylists', component: MyplaylistsComponent},
       {path: 'playlist/:id', component: PlaylistPreviewComponent}
     ]),

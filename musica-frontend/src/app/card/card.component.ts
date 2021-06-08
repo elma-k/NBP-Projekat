@@ -48,7 +48,7 @@ export class CardComponent implements OnInit, OnChanges{
   }
   remove(row_obj:any){
   // poziv metode za brisanje iz postojece playliste, prosljedjuje se id pjesme i id playliste
-  
+
    this.route.params.subscribe( params => console.log("Brisanje", row_obj.id,params.id));
 }
 
@@ -89,7 +89,15 @@ export class CardComponent implements OnInit, OnChanges{
     @Input() artistHeader = 'Artist';
     @Input() durationHeader = 'Duration';
     @Input() actionHeader = 'Action';
+    @Input() albumHeader = 'Album';
 
+
+    showArtist(obj:any){
+       this.router.navigate(['/artist', obj]);
+    }
+    showAlbum(obj:any){
+       this.router.navigate(['/album', obj]);
+    }
 
     currentIndex = 0;
 
@@ -259,11 +267,13 @@ export class CardComponent implements OnInit, OnChanges{
         if (this.displayArtist) {
             this.displayedColumns.push('artist');
         }
+        this.displayedColumns.push('album');
         if (this.displayDuration) {
             this.displayedColumns.push('duration');
         }
         this.displayedColumns.push('status');
         this.displayedColumns.push('action');
+
     }
 
     initialize() {

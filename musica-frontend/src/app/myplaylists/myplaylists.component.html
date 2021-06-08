@@ -25,16 +25,21 @@
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> <a (click)="showPlaylist(element.id)">{{element.name}} </a></td>
+      <td mat-cell *matCellDef="let element"> <a style="cursor:pointer;"(click)="showPlaylist(element.id)">{{element.name}} </a></td>
     </ng-container>
-
+    <!-- shared Column -->
+    <ng-container matColumnDef="shared">
+      <th mat-header-cell *matHeaderCellDef> Shared </th>
+      <td mat-cell *matCellDef="let element">  <p *ngIf="element.shared==0; else elseBlock"> No</p></td>
+    </ng-container>
+    <ng-template #elseBlock>Yes</ng-template>
 
     <!-- Action Column -->
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef> Action </th>
       <td mat-cell *matCellDef="let element" class="action-link">
-        <a (click)="openDialog('Delete',element); selectedIndex(element)">Delete</a>
-
+        <a style="cursor:pointer;"(click)="openDialog('Delete',element); selectedIndex(element)">Delete</a>  |
+        <a style="cursor:pointer;"(click)="openDialog('Share',element); selectedIndex(element)">Share</a>
       </td>
     </ng-container>
 

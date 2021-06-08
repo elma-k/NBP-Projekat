@@ -10,10 +10,10 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
 const ELEMENT_DATA: Playlist[] = [
-  {id: 1560608769632, name: 'Playlist 1'},
-  {id: 1560608796014, name: 'Playlist 2'},
-  {id: 1560608787815, name: 'Playlist 3'},
-  {id: 1560608805101, name: 'Playlist 4'}
+  {id: 1560608769632, name: 'Playlist 1',shared:1},
+  {id: 1560608796014, name: 'Playlist 2',shared:0},
+  {id: 1560608787815, name: 'Playlist 3',shared:1},
+  {id: 1560608805101, name: 'Playlist 4',shared:0}
 ];
 @Component({
   selector: 'app-myplaylists',
@@ -21,7 +21,7 @@ const ELEMENT_DATA: Playlist[] = [
   styleUrls: ['./myplaylists.component.css']
 })
 export class MyplaylistsComponent implements AfterViewInit{
-  displayedColumns: string[] = ['name', 'action'];
+  displayedColumns: string[] = ['name','shared', 'action'];
   dataSource = new MatTableDataSource<Playlist>(ELEMENT_DATA);
   data = Object.assign( ELEMENT_DATA);
   selected : number;
@@ -45,8 +45,8 @@ export class MyplaylistsComponent implements AfterViewInit{
     dialogRef.afterClosed().subscribe(result => {
       if(result.event == 'Add'){
         this.addRowData(result.data);
-      }else if(result.event == 'Update'){
-        //this.updateRowData(result.data);
+      }else if(result.event == 'Share'){
+        this.share(result.data);
       }else if(result.event == 'Delete'){
         this.deleteRowData(result.data);
       }
@@ -64,7 +64,8 @@ export class MyplaylistsComponent implements AfterViewInit{
     const data = this.dataSource.data;
     data.push({
       id:d.getTime(),
-      name:row_obj.name
+      name:row_obj.name,
+      shared:0
     });
     this.dataSource.data = data;
     this.table.renderRows();
@@ -73,21 +74,11 @@ export class MyplaylistsComponent implements AfterViewInit{
      this.router.navigate(['/playlist', obj]);
 
   }
-  // updateRowData(row_obj:any){
-  //   this.dataSource = this.dataSource.filter((value:any,key:any)=>{
-  //     if(value.id == row_obj.id){
-  //       value.name = row_obj.name;
-  //     }
-  //     return true;
-  //   });
-  //   const data = this.dataSource.data;
-  //   data.push({
-  //     id:d.getTime(),
-  //     name:row_obj.name
-  //   });
-  //   this.dataSource.data = data;
-  //   this.table.renderRows();
-  // }
+  share(row_obj:any){
+    //podijeli
+  }
+
+
   deleteRowData(row_obj:any){
     const index = this.dataSource.data.indexOf(row_obj);
     this.dataSource.data.splice(this.selected, 1);

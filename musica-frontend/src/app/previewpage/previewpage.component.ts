@@ -14,6 +14,7 @@ export class PreviewpageComponent implements OnInit {
   constructor(private previewpageService: PreviewpageService) { }
 
   ngOnInit(): void {
+    this.msaapDisplayDelete = false;
   }
   searchSong(value:string) {
    // this.previewpageService.getMusicList(value).subscribe(music => {
@@ -37,7 +38,9 @@ export class PreviewpageComponent implements OnInit {
         './assets/music/LostOnYou.mp3',
       duration: 270,
       artist: 'LP',
-      albumId: 1
+      albumId: 1,
+      artistId: 1,
+      album: 'Album 1'
     },
     {
       id : 16,
@@ -46,7 +49,9 @@ export class PreviewpageComponent implements OnInit {
         './assets/music/AnotherLove.mp3',
       duration: 247,
       artist: 'Tom Odell',
-      albumId: 2
+      albumId: 2,
+      artistId: 2,
+      album: 'Album 4'
     },
     {
         id : 17,
@@ -55,7 +60,9 @@ export class PreviewpageComponent implements OnInit {
         './assets/music/NoRoots.mp3',
       duration: 236,
       artist: 'Alice Merton',
-      albumId: 3
+      albumId: 3,
+      artistId: 3,
+      album: 'Album 5'
     }
   ];
 

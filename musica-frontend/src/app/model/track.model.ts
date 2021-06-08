@@ -8,6 +8,8 @@ export class Track {
   endOffset?: number;
   duration?: number;
   artist?: string;
+  artistId: number;
+  album?: string;
   public toString = (): string => {
     return `Track (index: ${this.index}, title: ${this.title})`;
   }

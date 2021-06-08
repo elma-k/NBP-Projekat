@@ -213,14 +213,20 @@
         <table [dataSource]="dataSource" class="mat-elevation-z6" mat-table>
             <ng-container matColumnDef="title">
                 <th *matHeaderCellDef mat-header-cell>{{titleHeader}}</th>
-                <td (click)="selectTrack(element.index)" *matCellDef="let element" mat-cell>
+                <td style="cursor:pointer;"(click)="selectTrack(element.index)" *matCellDef="let element" mat-cell>
                     {{element.title}}
                 </td>
             </ng-container>
             <ng-container matColumnDef="artist">
                 <th *matHeaderCellDef mat-header-cell>{{artistHeader}}</th>
-                <td (click)="selectTrack(element.index)" *matCellDef="let element" mat-cell>
+                <td style="cursor:pointer;"(click)="selectTrack(element.index);showArtist(element.artistId)" *matCellDef="let element" mat-cell>
                     {{element?.artist ? element?.artist : ''}}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="album">
+                <th *matHeaderCellDef mat-header-cell>{{albumHeader}}</th>
+                <td style="cursor:pointer;"(click)="selectTrack(element.index);showAlbum(element.albumId)" *matCellDef="let element" mat-cell>
+                    {{element?.album ? element?.album : ''}}
                 </td>
             </ng-container>
             <ng-container matColumnDef="duration">
@@ -251,8 +257,8 @@
             <ng-container matColumnDef="action">
                 <th *matHeaderCellDef mat-header-cell>{{actionHeader}}</th>
                 <td (click)="selectTrack(element.index)" *matCellDef="let element" mat-cell class="action-link">
-                    <a *ngIf="displayDelete==false"(click)="openDialog('Add',element)"></a>
-                    <a *ngIf="displayDelete==true"(click)="openDialog('Delete',element)">Remove</a>
+                    <a style="cursor:pointer;"*ngIf="displayDelete==false"(click)="openDialog('Add',element)">Add to a playlist</a>
+                    <a style="cursor:pointer;"*ngIf="displayDelete==true"(click)="openDialog('Delete',element)">Remove</a>
 
                 </td>
             </ng-container>
