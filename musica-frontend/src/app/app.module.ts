@@ -65,6 +65,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { DetailsPerformerComponent } from './details-performer/details-performer.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import {OverlayModule} from '@angular/cdk/overlay';
     SearchBarComponent,
     SecondsToMinutesPipe,
     DetailsSongComponent,
-    DetailsAlbumComponent
+    DetailsAlbumComponent,
+    DetailsPerformerComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +89,8 @@ import {OverlayModule} from '@angular/cdk/overlay';
       {path: '', component: LandingPageComponent},
       {path: 'profile-page', component: ProfilePageComponent},
       {path: 'song', component: DetailsSongComponent},
-      {path: 'album', component: DetailsAlbumComponent}
+      {path: 'album', component: DetailsAlbumComponent},
+      {path: 'performer', component: DetailsPerformerComponent}
     ]),
     ModalModule.forRoot(),
     MDBBootstrapModulesPro.forRoot(),
