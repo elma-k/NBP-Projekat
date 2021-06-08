@@ -66,6 +66,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { DetailsPerformerComponent } from './details-performer/details-performer.component';
+import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { DetailsPerformerComponent } from './details-performer/details-performer
     SecondsToMinutesPipe,
     DetailsSongComponent,
     DetailsAlbumComponent,
-    DetailsPerformerComponent
+    DetailsPerformerComponent,
+    DialogBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -107,7 +109,8 @@ import { DetailsPerformerComponent } from './details-performer/details-performer
     MatPaginatorModule,
     MatCardModule,
     MatFormFieldModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule
   ],
   entryComponents: [ LoginFormModalComponent,
   ProfilePageComponent ],

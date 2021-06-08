@@ -1,0 +1,20 @@
+<!-- dialog-box.component.html -->
+<h1 mat-dialog-title><strong>Add to a playlist</strong></h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Choose playlist</mat-label>
+    <mat-select [(ngModel)]="selectedValue" name="playlist">
+      <mat-option *ngFor="let p of playlist" [value]="p.value">
+        {{p.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <ng-template #elseTemplate>
+    Sure to delete <b>{{local_data.name}}</b>?
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>

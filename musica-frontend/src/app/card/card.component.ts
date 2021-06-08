@@ -6,6 +6,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { SecondsToMinutesPipe } from '../pipe/seconds-to-minutes';
 import { AudioPlayerService } from '../service/audio-player-service/audio-player.service';
 import { Subject } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-card',
@@ -17,12 +19,29 @@ export class CardComponent implements OnInit, OnChanges{
 
     audioPlayerService: AudioPlayerService;
     repeat: string = 'all';
-    constructor(elem: ElementRef) {
+    constructor(elem: ElementRef, public dialog: MatDialog) {
         if (elem.nativeElement.tagName.toLowerCase() === 'mat-advanced-audio-player') {
             console.warn(`'mat-advanced-audio-player' selector is deprecated; use 'ngx-audio-player' instead.`);
         }
         this.audioPlayerService = new AudioPlayerService();
     }
+    openDialog(action:any,obj:any) {
+    obj.action = action;
+    const dialogRef = this.dialog.open(DialogBoxComponent, {
+      width: '250px',
+      data:obj
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result.event == 'Add'){
+        this.addToPlaylist(result.data,result.selected);
+      }
+    });
+  }
+  addToPlaylist(row_obj:any,selected:any){
+    // poziv metode za dodavanje u postojecu playlistu, prosljedjuje se id pjesme i id playliste
+    console.log(row_obj.id, selected);
+}
 
     @Input()
     set playlist(playlist: Track[]) {
@@ -59,6 +78,7 @@ export class CardComponent implements OnInit, OnChanges{
     @Input() titleHeader = 'Title';
     @Input() artistHeader = 'Artist';
     @Input() durationHeader = 'Duration';
+    @Input() actionHeader = 'Action';
 
 
     currentIndex = 0;
@@ -233,6 +253,7 @@ export class CardComponent implements OnInit, OnChanges{
             this.displayedColumns.push('duration');
         }
         this.displayedColumns.push('status');
+        this.displayedColumns.push('action');
     }
 
     initialize() {

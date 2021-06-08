@@ -247,6 +247,15 @@
                     </div>
                 </td>
             </ng-container>
+            <!-- Action Column -->
+            <ng-container matColumnDef="action">
+                <th *matHeaderCellDef mat-header-cell>{{actionHeader}}</th>
+                <td (click)="selectTrack(element.index)" *matCellDef="let element" mat-cell class="action-link">
+                    <a (click)="openDialog('Add',element)">Add to a playlist</a>
+                </td>
+            </ng-container>
+
+
             <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
             <tr *matRowDef="let row; columns: displayedColumns;" class="mat-select-content" mat-row></tr>
         </table>

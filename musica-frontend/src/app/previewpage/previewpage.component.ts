@@ -27,39 +27,35 @@ export class PreviewpageComponent implements OnInit {
   @ViewChild('player', { static: false })
   advancedPlayer: CardComponent;
 
-  // Single
-  singleTrack: Track[] = [
-    {
-      title: 'In Love',
-      link:
-        'https://dl.dropboxusercontent.com/s/9v0psowra7ekhxo/A%20Himitsu%20-%20In%20Love%20%28feat.%20Nori%29.flac?dl=0',
-      duration: 227,
-      artist: 'A Himitsu feat. Nori'
-    }
-  ];
 
   // Multiple
   multiple: Track[] = [
     {
+      id : 15,
       title: 'Lost On You',
       link:
         './assets/music/LostOnYou.mp3',
       duration: 270,
-      artist: 'LP'
+      artist: 'LP',
+      albumId: 1
     },
     {
+      id : 16,
       title: 'Another Love',
       link:
         './assets/music/AnotherLove.mp3',
       duration: 247,
-      artist: 'Tom Odell'
+      artist: 'Tom Odell',
+      albumId: 2
     },
     {
+        id : 17,
       title: 'No Roots',
       link:
         './assets/music/NoRoots.mp3',
       duration: 236,
-      artist: 'Alice Merton'
+      artist: 'Alice Merton',
+      albumId: 3
     }
   ];
 
@@ -83,35 +79,6 @@ export class PreviewpageComponent implements OnInit {
 
   // Start: Required for demo purpose
 
-  msaapPlaylist2: Track[] = [
-    {
-      title: '1400',
-      link: `${this.fmaBaseUrl}/no_curator/Yung_Kartz/August_2018/Yung_Kartz_-_10_-_1400.mp3`,
-      duration: 212,
-      artist: 'Yung Kartz'
-    },
-    {
-      title: 'Epic Song',
-      link: `${this.fmaBaseUrl}/ccCommunity/BoxCat_Games/Nameless_The_Hackers_RPG_Soundtrack/BoxCat_Games_-_10_-_Epic_Song.mp3`,
-      duration: 54,
-      artist: 'BoxCat Games'
-    }
-  ];
-
-  msaapPlaylist3: Track[] = [
-    {
-      title: 'Hachiko (The Faithful Dog)',
-      link: `${this.fmaBaseUrl}/ccCommunity/The_Kyoto_Connection/Wake_Up/The_Kyoto_Connection_-_09_-_Hachiko_The_Faithtful_Dog.mp3`,
-      duration: 185,
-      artist: 'The Kyoto'
-    },
-    {
-      title: 'Starling',
-      link: `${this.fmaBaseUrl}/Music_for_Video/Podington_Bear/Solo_Instruments/Podington_Bear_-_Starling.mp3`,
-      duration: 105,
-      artist: 'Podington Bear'
-    }
-  ];
 
   currentTrack: Track = new Track();
   currentTime: any;
@@ -151,26 +118,26 @@ export class PreviewpageComponent implements OnInit {
 
   appendTracksToPlaylist() {
 
-    if (this.msaapPlaylist.length === 1) {
-      this.msaapPlaylist = this.multiple;
-    } else if (this.msaapPlaylist.length === 2) {
-      this.msaapPlaylist2.map(track => {
-        this.msaapPlaylist.push(track);
-      });
-      this.advancedPlayer.audioPlayerService.setPlaylist(this.msaapPlaylist);
-    } else if (this.msaapPlaylist.length === 4) {
-      this.msaapPlaylist3.map(track => {
-        this.msaapPlaylist.push(track);
-      });
-      this.advancedPlayer.audioPlayerService.setPlaylist(this.msaapPlaylist);
-      this.appendTracksToPlaylistDisable = true;
-    }
+    // if (this.msaapPlaylist.length === 1) {
+    //   this.msaapPlaylist = this.multiple;
+    // } else if (this.msaapPlaylist.length === 2) {
+    //   this.msaapPlaylist2.map(track => {
+    //     this.msaapPlaylist.push(track);
+    //   });
+    //   this.advancedPlayer.audioPlayerService.setPlaylist(this.msaapPlaylist);
+    // } else if (this.msaapPlaylist.length === 4) {
+    //   this.msaapPlaylist3.map(track => {
+    //     this.msaapPlaylist.push(track);
+    //   });
+    //   this.advancedPlayer.audioPlayerService.setPlaylist(this.msaapPlaylist);
+    //   this.appendTracksToPlaylistDisable = true;
+    // }
   }
 
-  setSingleTrack() {
-    this.msaapPlaylist = this.singleTrack;
-    this.appendTracksToPlaylistDisable = false;
-  }
+  // setSingleTrack() {
+  //   this.msaapPlaylist = this.singleTrack;
+  //   this.appendTracksToPlaylistDisable = false;
+  // }
 
   changeMsaapDisplayTitle(event:any) {
     this.msaapDisplayTitle = event.checked;
