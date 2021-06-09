@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
-
+import {FormGroup, FormControl, Validators} from '@angular/forms';
+  
 interface Location {
   value: string;
   viewValue: string;
@@ -21,6 +21,12 @@ export class ProfilePageComponent implements OnInit {
   email="marija@etf.unsa.ba";
   username="Marija123";
   userPhotoSrc="./assets/images/profile-medium.png";
+  imageSrc = this.userPhotoSrc;
+  myForm = new FormGroup({
+   name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+   file: new FormControl('', [Validators.required]),
+   fileSource: new FormControl('', [Validators.required])
+ });
 
   locations: Location[] = [
     {value: 'ba-0', viewValue: 'Bosnia & Herzegovina'},
@@ -37,13 +43,44 @@ export class ProfilePageComponent implements OnInit {
   fileName = '';
 
     constructor(private http: HttpClient) {}
-  
+    get f(){
+      return this.myForm.controls;
+    }
+      
+    onFileChange(event) {
+      const reader = new FileReader();
+       
+      if(event.target.files && event.target.files.length) {
+        const [file] = event.target.files;
+        reader.readAsDataURL(file);
+       
+        reader.onload = () => {
+      
+          this.imageSrc = reader.result as string;
+        
+          this.myForm.patchValue({
+            fileSource: reader.result
+          });
+      
+        };
+      
+      }
+    }
+      
+    onSaveChanges(){
+      console.log(this.myForm.value);
+      this.http.post('http://localhost:4200/upload.php', this.myForm.value)
+        .subscribe(res => {
+          console.log(res);
+          alert('Uploaded Successfully.');
+        })
+    }
   
   ngOnInit(): void {
   }
 
-  onSaveChanges() {}
   
-  onChangeProfilePhoto() {
+  onChangeProfilePhoto(event) {
+    this.onFileChange(event);
   }
 }

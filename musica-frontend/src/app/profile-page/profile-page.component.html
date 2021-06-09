@@ -52,12 +52,21 @@
             <mat-card-header>
               <mat-card-subtitle>Profile picture</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image [(src)]="userPhotoSrc" alt="Profile photo"> 
+            <img mat-card-image  alt="Profile photo" [src]="imageSrc" *ngIf="imageSrc"
+            > 
+            
+            <input
+            id="file"
+            type="file"
+            accept="image/png, image/jpeg"
+            (change)="onFileChange($event)" >
             
             
-            <button mat-raised-button color="is-dark" (click)="onChangeProfilePhoto()">Change image</button>
         </mat-card>
         <br>
         <button mat-raised-button (click)="onSaveChanges()">Save changes</button>
+        
     </form>
+
+
 </div>
