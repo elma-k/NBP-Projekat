@@ -22,9 +22,6 @@ export class PlaylistPreviewComponent implements OnInit {
    // });
   }
 
-  //constructor() { }
-  private fmaBaseUrl = 'https://files.freemusicarchive.org/storage-freemusicarchive-org/music';
-
   @ViewChild('player', { static: false })
   advancedPlayer: CardComponent;
 
@@ -75,6 +72,8 @@ export class PlaylistPreviewComponent implements OnInit {
   msaapDisplayDelete = true;
   msaapDisplayDuration = true;
   msaapDisablePositionSlider = false;
+  msaapDisplayAction = true;
+  msaapDisplayAlbum = true;
 
   msaapTableHeader = 'Songs';
   msaapTitleHeader = 'Title';
@@ -93,11 +92,7 @@ export class PlaylistPreviewComponent implements OnInit {
 
   onEnded(event:any) {
     console.log(event);
-    // your logic which needs to
-    // be triggered once the
-    // track ends goes here.
 
-    // example
     this.currentTrack = new Track();
   }
 
@@ -114,64 +109,8 @@ export class PlaylistPreviewComponent implements OnInit {
   }
 
   consoleLogCurrentData() {
-    // logCurrentTrack();
-    // logCurrentTime();
-    // Make sure to subscribe (by calling above methods)
-    // before getting the data
+
     console.log(this.currentTrack.title + ' : ' + this.currentTime);
   }
-
-  appendTracksToPlaylist() {
-
-    // if (this.msaapPlaylist.length === 1) {
-    //   this.msaapPlaylist = this.multiple;
-    // } else if (this.msaapPlaylist.length === 2) {
-    //   this.msaapPlaylist2.map(track => {
-    //     this.msaapPlaylist.push(track);
-    //   });
-    //   this.advancedPlayer.audioPlayerService.setPlaylist(this.msaapPlaylist);
-    // } else if (this.msaapPlaylist.length === 4) {
-    //   this.msaapPlaylist3.map(track => {
-    //     this.msaapPlaylist.push(track);
-    //   });
-    //   this.advancedPlayer.audioPlayerService.setPlaylist(this.msaapPlaylist);
-    //   this.appendTracksToPlaylistDisable = true;
-    // }
-  }
-
-  // setSingleTrack() {
-  //   this.msaapPlaylist = this.singleTrack;
-  //   this.appendTracksToPlaylistDisable = false;
-  // }
-
-  changeMsaapDisplayTitle(event:any) {
-    this.msaapDisplayTitle = event.checked;
-  }
-
-  changeMsaapDisplayPlayList(event:any) {
-    this.msaapDisplayPlayList = event.checked;
-  }
-
-  changeMsaapDisplayVolumeControls(event:any) {
-    this.msaapDisplayVolumeControls = event.checked;
-  }
-
-  changeMsaapDisplayRepeatControls(event:any) {
-    this.msaapDisplayRepeatControls = event.checked;
-  }
-
-  changeMsaapDisplayArtist(event:any) {
-    this.msaapDisplayArtist = event.checked;
-  }
-
-  changeMsaapDisplayDuration(event:any) {
-    this.msaapDisplayDuration = event.checked;
-  }
-
-  changeMsaapDisablePositionSlider(event:any) {
-    this.msaapDisablePositionSlider = event.checked;
-  }
-  // End: Required for demo purpose
-
 
 }

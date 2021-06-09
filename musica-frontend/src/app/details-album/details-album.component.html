@@ -1,66 +1,3 @@
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-<div class="container">
-    <div class="row" style="max-height: 50vh;  background-color:#5a695d;">
-        <div class="col-sm-3 text-center" id="row1col1">
-            <img [(src)]="albumPhotoSrc"  alt="Album photo" style="max-width: 200px;">
-        </div>
-        <div class="col-sm-9 d-flex align-items-end" id="row1col2">
-            <div >
-                <label >ALBUM</label>
-                <h1  for="albumTitle" class="text">{{albumTitle}}</h1>
-                <div id="about">
-                    <label for="performer" id="label-performer"> {{performer}} </label>
-                    <label for="year"> {{year}} </label> <div class="vl"></div>
-                    <label for="noSongs"> {{noSongs}} songs</label>
-                    <label for="fullLength"> {{fullLength}} </label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row d-flex justify-content-center">
-        <div class="col-sm " >
-
-                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-hover  " >
-                    <!-- Position Column -->
-                    <!-- <ng-container matColumnDef="position">
-                    <th mat-header-cell *matHeaderCellDef>#</th>
-                    <td mat-cell *matCellDef="let element">{{element.position}}</td>
-                    </ng-container> -->
-
-                    <!-- Title Column -->
-                    <!-- <ng-container matColumnDef="title">
-                    <th mat-header-cell *matHeaderCellDef>Title</th>
-                    <td mat-cell *matCellDef="let element">{{element.title}}</td>
-                    </ng-container> -->
-
-                    <!-- Liked Column -->
-                    <!-- <ng-container matColumnDef="liked">
-                        <th mat-header-cell *matHeaderCellDef></th>
-                        <td mat-cell *matCellDef="let element">{{element.liked}}</td>
-                    </ng-container> -->
-
-                    <!-- Duration Column -->
-                    <!-- <ng-container matColumnDef="duration">
-                    <th mat-header-cell *matHeaderCellDef>Duration</th>
-                    <td mat-cell *matCellDef="let element">{{element.duration}}</td>
-                    </ng-container> -->
-
-
-                    <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row
-                        *matRowDef="let row; columns: displayedColumns;"
-                    ></tr>
-                </table> -->
-
-
-<!--
-        </div>
-    </div>
-
-</div> -->
-
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
 <mat-toolbar class="navBar navbar-light">
   <a class="navbar-brand" href="#">
       <img src="./assets/images/logoWhite.png" style="width:65px; padding:5px">
@@ -81,15 +18,27 @@
           <img [(src)]="albumPhotoSrc"  alt="Album photo" style="max-width: 200px;">
       </div>
       <div class="info"style="margin-top:50px">
-        <label>ALBUM</label>
-        <h1  for="albumTitle" class="text">{{albumTitle}}</h1>
-        <div id="about">
-            <label for="performer" id="label-performer"> {{performer}} </label>
-            <label for="year"> {{year}} </label> <div class="vl"></div>
-            <label for="noSongs"> {{noSongs}} songs</label>
+        <label  style="font-weight: bold;">ALBUM</label>
+        <h1  for="albumTitle"class="text">{{albumTitle}}</h1>
+        <div id="about" style="font-weight: bold;">
+            <label for="performer" id="label-performer"> {{performer}} • </label>
+            <label for="year"> {{year}} • </label>
+            <label for="noSongs"> {{noSongs}} songs • </label>
             <label for="fullLength"> {{fullLength}} </label>
         </div>
 
       </div>
     </div>
+</div>
+<div class="card-container">
+    <!-- <app-card [music]="music"></app-card> -->
+    <app-card #player (trackEnded)="onEnded($event)" [autoPlay]="false"
+            [displayPlaylist]="msaapDisplayPlayList" [tableHeader]="msaapTableHeader" [titleHeader]="msaapTitleHeader"
+            [artistHeader]="msaapArtistHeader" [durationHeader]="msaapDurationHeader" [displayTitle]="msaapDisplayTitle"
+            [displayDelete]="msaapDisplayDelete" [displayAction]="msaapDisplayAction" [displayAlbum]="msaapDisplayAlbum"
+            [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"
+            [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist"
+            [displayDuration]="msaapDisplayDuration" [expanded]="true"
+            [pageSizeOptions]="pageSizeOptions" [playlist]="msaapPlaylist">
+          </app-card>
 </div>

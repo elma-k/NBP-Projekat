@@ -82,6 +82,8 @@ export class CardComponent implements OnInit, OnChanges{
     @Input() displayArtist = false;
     @Input() displayDuration = false;
     @Input() displayDelete = false;
+    @Input() displayAction = false;
+    @Input() displayAlbum = false;
 
     // Support for internationalization
     @Input() tableHeader = 'Playlist';
@@ -267,12 +269,19 @@ export class CardComponent implements OnInit, OnChanges{
         if (this.displayArtist) {
             this.displayedColumns.push('artist');
         }
-        this.displayedColumns.push('album');
+        if(this.displayAlbum){
+            this.displayedColumns.push('album');
+        }
+
         if (this.displayDuration) {
             this.displayedColumns.push('duration');
         }
         this.displayedColumns.push('status');
-        this.displayedColumns.push('action');
+        
+        if(this.displayAction){
+            this.displayedColumns.push('action');
+        }
+
 
     }
 

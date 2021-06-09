@@ -25,14 +25,18 @@
   width: 80%;
 }
 .image{
-  width: 30%;
+  width: 25%;
   float: left;
 }
 .info{
   width: 40%;
   float: left;
 }
-#label{
-  width: 100%;
-  float: left;
+.text{
+  font-size: 50px;
+  font-weight: bold;
+}
+.card-container {
+  margin: auto;
+  width: 80%;
 }
