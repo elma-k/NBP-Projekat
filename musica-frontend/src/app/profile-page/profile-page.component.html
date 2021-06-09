@@ -6,7 +6,7 @@
   
     <a class="navbar-brand" href="profile-page">
         <label for="name">{{name}}</label>
-        <img [(src)]="userPhotoSrc" style="width:35px;" >
+        <img [(src)]="imageSrc" style="width:35px;" >
     </a>
   </mat-toolbar>
 <div id="edit-data-div">
@@ -58,9 +58,9 @@
             <input
             id="file"
             type="file"
+            class="custom-file-input"
             accept="image/png, image/jpeg"
             (change)="onFileChange($event)" >
-            
             
         </mat-card>
         <br>
