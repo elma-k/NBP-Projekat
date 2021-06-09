@@ -13,12 +13,12 @@ import { SecondsToMinutesPipe } from '../pipe/seconds-to-minutes';
 })
 export class DetailsAlbumComponent implements OnInit {
   music:any;
-  albumPhotoSrc="./assets/images/dubioza-kolektiv.jpg";
-  albumTitle= "Happy Machine";
-  performer= "Dubioza Kolektiv";
-  year = 2016;
-  noSongs =10;
-  fullLength ="35 min, 6 sec";
+  albumPhotoSrc="./assets/images/the_eminem_show.jpg";
+  albumTitle= "The Eminem Show";
+  performer= "Eminem";
+  year = 2002;
+  noSongs = 6;
+  fullLength ="27 min, 6 sec";
 
   constructor(private detailsAlbumService: DetailsAlbumService) { }
 
@@ -37,43 +37,83 @@ export class DetailsAlbumComponent implements OnInit {
 
 
   // Multiple
-  multiple: Track[] = [
+  eminem: Track[] = [
     {
-      id : 15,
-      title: 'Lost On You',
+      id : 1,
+      title: 'Business',
       link:
-        './assets/music/LostOnYou.mp3',
-      duration: 270,
-      artist: 'LP',
+        './assets/music/Business.mp3',
+      duration: 251,
+      artist: 'Eminem',
       albumId: 1,
       artistId: 1,
-      album: 'Album 1'
+      album: 'The Eminem Show',
+      genre: 'Hip hop'
     },
     {
-      id : 16,
-      title: 'Another Love',
+      id : 2,
+      title: '\'Till I Collapse',
       link:
-        './assets/music/AnotherLove.mp3',
-      duration: 247,
-      artist: 'Tom Odell',
-      albumId: 2,
-      artistId: 2,
-      album: 'Album 4'
+        './assets/music/TillICollapse.mp3',
+      duration: 297,
+      artist: 'Eminem',
+      albumId: 1,
+      artistId: 1,
+      album: 'The Eminem Show',
+      genre: 'Hip hop'
     },
     {
-        id : 17,
-      title: 'No Roots',
+      id : 3,
+      title: 'Without Me',
       link:
-        './assets/music/NoRoots.mp3',
-      duration: 236,
-      artist: 'Alice Merton',
-      albumId: 3,
-      artistId: 3,
-      album: 'Album 5'
+        './assets/music/WithoutMe.mp3',
+      duration: 290,
+      artist: 'Eminem',
+      albumId: 1,
+      artistId: 1,
+      album: 'The Eminem Show',
+      genre: 'Hip hop'
+    },
+    {
+      id : 4,
+      title: 'Soldier',
+      link:
+        './assets/music/Soldier.mp3',
+      duration: 226,
+      artist: 'Eminem',
+      albumId: 1,
+      artistId: 1,
+      album: 'The Eminem Show',
+      genre: 'Hip hop'
+    },
+    {
+      id : 5,
+      title: 'Say What YouSay',
+      link:
+        './assets/music/SayWhatYouSay.mp3',
+      duration: 309,
+      artist: 'Eminem',
+      albumId: 1,
+      artistId: 1,
+      album: 'The Eminem Show',
+      genre: 'Hip hop'
+    },
+    {
+      id : 6,
+      title: 'SquareDance',
+      link:
+        './assets/music/SquareDance.mp3',
+      duration: 323,
+      artist: 'Eminem',
+      albumId: 1,
+      artistId: 1,
+      album: 'The Eminem Show',
+      genre: 'Hip hop'
     }
+
   ];
 
-  msaapPlaylist: Track[] = this.multiple;
+  msaapPlaylist: Track[] = this.eminem;
 
   msaapDisplayTitle = true;
   msaapDisplayPlayList = true;
@@ -87,6 +127,7 @@ export class DetailsAlbumComponent implements OnInit {
   msaapDisplayDelete = false;
   msaapDisplayAction = true;
   msaapDisplayAlbum = false;
+  msaapDisplayGenre = false;
 
   msaapTableHeader = 'Songs';
   msaapTitleHeader = 'Title';

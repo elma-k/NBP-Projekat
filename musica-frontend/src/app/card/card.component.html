@@ -219,14 +219,20 @@
             </ng-container>
             <ng-container matColumnDef="artist">
                 <th *matHeaderCellDef mat-header-cell>{{artistHeader}}</th>
-                <td style="cursor:pointer;"(click)="selectTrack(element.index);showArtist(element.artistId)" *matCellDef="let element" mat-cell>
+                <td style="cursor:pointer;"(click)="showArtist(element.artistId)" *matCellDef="let element" mat-cell>
                     {{element?.artist ? element?.artist : ''}}
                 </td>
             </ng-container>
             <ng-container matColumnDef="album">
                 <th *matHeaderCellDef mat-header-cell>{{albumHeader}}</th>
-                <td style="cursor:pointer;"(click)="selectTrack(element.index);showAlbum(element.albumId)" *matCellDef="let element" mat-cell>
+                <td style="cursor:pointer;"(click)="showAlbum(element.albumId)" *matCellDef="let element" mat-cell>
                     {{element?.album ? element?.album : ''}}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="genre">
+                <th *matHeaderCellDef mat-header-cell>{{genreHeader}}</th>
+                <td style="cursor:pointer;"(click)="selectTrack(element.index)" *matCellDef="let element" mat-cell>
+                    {{element?.genre ? element?.genre : ''}}
                 </td>
             </ng-container>
             <ng-container matColumnDef="duration">

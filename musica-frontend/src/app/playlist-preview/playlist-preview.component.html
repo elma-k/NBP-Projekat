@@ -13,13 +13,14 @@
   </a>
 
 </mat-toolbar>
-  <h1 style="color:white; padding-left:120px">Playlist 1</h1>
+  <h1 style="color:white; padding-left:120px">Favourite songs</h1>
 <div class="card-container">
     <!-- <app-card [music]="music"></app-card> -->
     <app-card #player (trackEnded)="onEnded($event)" [autoPlay]="false"
             [displayPlaylist]="msaapDisplayPlayList" [tableHeader]="msaapTableHeader" [titleHeader]="msaapTitleHeader"
             [artistHeader]="msaapArtistHeader" [durationHeader]="msaapDurationHeader" [displayTitle]="msaapDisplayTitle"
             [displayDelete]="msaapDisplayDelete" [displayAction]="msaapDisplayAction" [displayAlbum]="msaapDisplayAlbum"
+            [displayGenre]="msaapDisplayGenre"
             [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"
             [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist"
             [displayDuration]="msaapDisplayDuration" [expanded]="true"

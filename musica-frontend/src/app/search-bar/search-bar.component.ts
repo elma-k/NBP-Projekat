@@ -7,13 +7,20 @@ interface Search {
   viewValue: string;
 }
 
+interface Emit {
+    value: string;
+    select: string;
+}
+
+
+
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
-  @Output() searchQuery: EventEmitter<string> = new EventEmitter<string>();
+  @Output() searchQuery: EventEmitter<Emit> = new EventEmitter<Emit>();
   selectedValue: string;
   selectedCar: string;
     search: Search[] = [
@@ -27,7 +34,10 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
   passQueryString(value:any) {
-    this.searchQuery.emit(value);
+    
+    const v: Emit = { value:value, select: this.selectedValue };
+
+    this.searchQuery.emit(v);
     this.previewpageService.clearCache();
   }
 

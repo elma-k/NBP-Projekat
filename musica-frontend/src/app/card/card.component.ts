@@ -84,6 +84,7 @@ export class CardComponent implements OnInit, OnChanges{
     @Input() displayDelete = false;
     @Input() displayAction = false;
     @Input() displayAlbum = false;
+    @Input() displayGenre = false;
 
     // Support for internationalization
     @Input() tableHeader = 'Playlist';
@@ -92,6 +93,7 @@ export class CardComponent implements OnInit, OnChanges{
     @Input() durationHeader = 'Duration';
     @Input() actionHeader = 'Action';
     @Input() albumHeader = 'Album';
+    @Input() genreHeader = 'Genre';
 
 
     showArtist(obj:any){
@@ -272,12 +274,15 @@ export class CardComponent implements OnInit, OnChanges{
         if(this.displayAlbum){
             this.displayedColumns.push('album');
         }
+        if(this.displayGenre){
+            this.displayedColumns.push('genre');
+        }
 
         if (this.displayDuration) {
             this.displayedColumns.push('duration');
         }
         this.displayedColumns.push('status');
-        
+
         if(this.displayAction){
             this.displayedColumns.push('action');
         }

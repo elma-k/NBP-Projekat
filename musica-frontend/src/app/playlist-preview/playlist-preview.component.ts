@@ -26,38 +26,70 @@ export class PlaylistPreviewComponent implements OnInit {
   advancedPlayer: CardComponent;
 
 
-  // Multiple
   multiple: Track[] = [
+
     {
-      id : 15,
-      title: 'Lost On You',
+      id : 2,
+      title: '\'Till I Collapse',
       link:
-        './assets/music/LostOnYou.mp3',
-      duration: 270,
-      artist: 'LP',
+        './assets/music/TillICollapse.mp3',
+      duration: 297,
+      artist: 'Eminem',
       albumId: 1,
-      artistId: 1
+      artistId: 1,
+      album: 'The Eminem Show',
+      genre: 'Hip hop'
     },
     {
-      id : 16,
-      title: 'Another Love',
+      id : 3,
+      title: 'Without Me',
       link:
-        './assets/music/AnotherLove.mp3',
-      duration: 247,
-      artist: 'Tom Odell',
+        './assets/music/WithoutMe.mp3',
+      duration: 290,
+      artist: 'Eminem',
+      albumId: 1,
+      artistId: 1,
+      album: 'The Eminem Show',
+      genre: 'Hip hop'
+    },
+
+    {
+      id : 9,
+      title: 'All of Me',
+      link:
+        './assets/music/AllofMe.mp3',
+      duration: 307,
+      artist: 'John Legend',
       albumId: 2,
-      artistId: 2
+      artistId: 2,
+      album: 'Love in the Future',
+      genre: 'R&B'
     },
     {
-        id : 17,
-      title: 'No Roots',
+      id : 10,
+      title: 'Wild',
       link:
-        './assets/music/NoRoots.mp3',
-      duration: 236,
-      artist: 'Alice Merton',
+        './assets/music/Wild.mp3',
+      duration: 214,
+      artist: 'John Legend',
       albumId: 3,
-      artistId: 3
+      artistId: 2,
+      album: 'Bigger Love',
+      genre: 'R&B'
+    },
+    {
+      id : 11,
+      title: 'One Life',
+      link:
+        './assets/music/OneLife.mp3',
+      duration: 196,
+      artist: 'John Legend',
+      albumId: 3,
+      artistId: 2,
+      album: 'Bigger Love',
+      genre: 'R&B'
     }
+
   ];
 
   msaapPlaylist: Track[] = this.multiple;
@@ -74,6 +106,7 @@ export class PlaylistPreviewComponent implements OnInit {
   msaapDisablePositionSlider = false;
   msaapDisplayAction = true;
   msaapDisplayAlbum = true;
+  msaapDisplayGenre = true;
 
   msaapTableHeader = 'Songs';
   msaapTitleHeader = 'Title';

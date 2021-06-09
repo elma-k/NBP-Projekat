@@ -10,6 +10,7 @@ export class Track {
   artist?: string;
   artistId: number;
   album?: string;
+  genre?: string;
   public toString = (): string => {
     return `Track (index: ${this.index}, title: ${this.title})`;
   }

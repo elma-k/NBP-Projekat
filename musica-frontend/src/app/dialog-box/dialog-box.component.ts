@@ -24,9 +24,7 @@ export class DialogBoxComponent {
   selectedValue: string;
 
   playlist: Playlist[] = [
-    {value: 0, viewValue: 'playlist1'},
-    {value: 1, viewValue: 'playlist2'},
-    {value: 2, viewValue: 'playlist3'}
+    {value: 0, viewValue: 'Favourite songs'}
   ];
 
   constructor(

@@ -1,0 +1,41 @@
+.details {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:aliceblue;
+    height: 100%;
+    max-height: 300px;
+}
+.navBar {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: fit-content;
+}
+.nav-bar-text {
+    font-style: normal;
+    color: white;
+    text-decoration: none;
+    padding-right: 20px;
+}
+
+
+.example-spacer {
+  flex: 1 1 auto;
+
+}
+.center{
+  margin: auto;
+  width: 80%;
+  font-size: 30px;
+  font-weight: bold;
+}
+.image{
+  width: 100%;
+  float: left;
+}
+
+.text{
+  font-size: 50px;
+  font-weight: bold;
+}
+.card-container {
+  margin: auto;
+  width: 80%;
+}
