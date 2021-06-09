@@ -3,19 +3,22 @@
         <img src="./assets/images/logoWhite.png" style="max-width:70px; padding:5px">
     </a>
     <span class="example-spacer"></span>
-  <!--
+
     <a class="navbar-brand" href="profile-page">
-        <label for="name">{{name}}</label>
-        <img [(src)]="imageSrc" style="width:35px;" >
-    </a>-->
+
+        <img [(src)]="imageSrc" style="width:50px; border-radius:30px" >
+    </a>
+    <!-- <a class="navbar-brand" href="profile-page">
+        <img src="./assets/images/profile.png" style="width:35px;">
+    </a> -->
   </mat-toolbar>
 <div id="edit-data-div">
     <form class="example-form">
         <mat-form-field class="example-full-width">
-        <mat-label>Username (disabled)</mat-label>
-        <input matInput disabled [(value)]="username">
+        <mat-label>Username </mat-label>
+        <input matInput  [(value)]="username">
         </mat-form-field>
-    
+
         <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field class="example-full-width">
             <mat-label>Name</mat-label>
@@ -26,7 +29,7 @@
             <input matInput [(value)]="surname">
         </mat-form-field></td>
         </tr></table>
-    
+
         <table class="example-full-width" cellspacing="0"><tr>
             <td><mat-form-field appearance="fill">
                 <mat-label>Location</mat-label>
@@ -48,24 +51,24 @@
 
         </mat-form-field></td>
         </tr></table>
-        <mat-card class="example-card" >
+        <mat-card class="example-card" style="background:#efefef">
             <mat-card-header>
               <mat-card-subtitle>Profile picture</mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image  alt="Profile photo" [src]="imageSrc" *ngIf="imageSrc"
-            > 
-            
+            >
+
             <input
             id="file"
             type="file"
             class="custom-file-input"
             accept="image/png, image/jpeg"
             (change)="onFileChange($event)" >
-            
+
         </mat-card>
         <br>
         <button mat-raised-button (click)="onSaveChanges()">Save changes</button>
-        
+
     </form>
 
 

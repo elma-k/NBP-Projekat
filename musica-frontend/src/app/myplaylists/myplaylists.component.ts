@@ -10,7 +10,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
 const ELEMENT_DATA: Playlist[] = [
-  //{id: 1, name: 'Favourite songs',shared:0}
+  {id: 1, name: 'Favourite songs',shared:0}
   // {id: 1560608796014, name: 'Playlist 2',shared:0},
   // {id: 1560608787815, name: 'Playlist 3',shared:1},
   // {id: 1560608805101, name: 'Playlist 4',shared:0}
